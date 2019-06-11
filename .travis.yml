@@ -13,8 +13,8 @@ env:
 
 before_script:
   - go version
-  - make clean
+  - go clean ./...
 
 script:
-  - make test
-  - make build
+  - go test 
+  - go build .
