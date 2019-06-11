@@ -14,6 +14,7 @@ import (
 	"strings"
 )
 
+// Common error for pidfile package
 var (
 	ErrProcessRunning = errors.New("process is running")
 	ErrFileStale      = errors.New("pidfile exists but process is not running")

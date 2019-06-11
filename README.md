@@ -1,7 +1,13 @@
 # A Tiny PIDFile Library for Golang
 
+[![Build Status](https://travis-ci.org/mingcheng/pidfile.go.svg?branch=master)](https://travis-ci.org/mingcheng/pidfile.go)
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/mingcheng/pidfile.go)](https://goreportcard.com/report/github.com/mingcheng/pidfile.go)
+
 This package provides structure and helper functions to create and remove PID file. 
 PIDFile is a file used to store the process ID of a running process.
+
+For more information and documents, visit https://godoc.org/github.com/mingcheng/pidfile.go
 
 ## Feature
 
