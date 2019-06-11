@@ -1,4 +1,4 @@
-// +build darwin freebsd !linux !windows
+// +build darwin freebsd
 
 package pidfile
 
