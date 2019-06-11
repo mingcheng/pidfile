@@ -26,4 +26,4 @@ if pid, err := pidfile.New(pidFilePath); err != nil {
 
 If you have any suggest, sending me via email to `echo bWluZ2NoZW5nQG91dGxvb2suY29tCg== | base64 -D`, with huge thanks.
 
-- eof -
+`- eof -`
