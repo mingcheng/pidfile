@@ -1,4 +1,4 @@
-module github.com/mingcheng/pidfile.go
+module github.com/mingcheng/pidfile
 
 go 1.12
 
