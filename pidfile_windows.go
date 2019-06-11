@@ -16,11 +16,11 @@ func processExists(pid int) bool {
 		return false
 	} else {
 		defer windows.Close(h)
-	}
 
-	var c uint32
-	if err = windows.GetExitCodeProcess(h, &c); err != nil {
-		return c == stillActive
+		var c uint32
+		if err := windows.GetExitCodeProcess(h, &c); err != nil {
+			return c == stillActive
+		}
 	}
 
 	return true
