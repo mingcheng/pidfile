@@ -1,4 +1,4 @@
-# A Tiny Pidfile Util for Golang
+# A Tiny PIDFile Library for Golang
 
 This package provides structure and helper functions to create and remove PID file. 
 PIDFile is a file used to store the process ID of a running process.
