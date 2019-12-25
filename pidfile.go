@@ -30,7 +30,7 @@ type PIDFile struct {
 
 // New creates a PIDfile using the specified path.
 func New(path string) (*PIDFile, error) {
-	var file = PIDFile{
+	file := PIDFile{
 		path: path,
 		pid:  os.Getpid(),
 	}
@@ -51,18 +51,19 @@ func (file PIDFile) Remove() error {
 	return os.Remove(file.path)
 }
 
-// Read the PIDFile content.
+// Content reads the PIDFile content.
 func (file PIDFile) Content() (int, error) {
-	if contents, err := ioutil.ReadFile(file.path); err != nil {
+	contents, err := ioutil.ReadFile(file.path)
+	if err != nil {
 		return 0, err
-	} else {
-		pid, err := strconv.Atoi(strings.TrimSpace(string(contents)))
-		if err != nil || file.pid != pid {
-			return 0, ErrFileInvalid
-		}
-
-		return pid, nil
 	}
+
+	pid, err := strconv.Atoi(strings.TrimSpace(string(contents)))
+	if err != nil || file.pid != pid {
+		return 0, ErrFileInvalid
+	}
+
+	return pid, nil
 }
 
 // Write writes a pidfile, returning an error
@@ -94,7 +95,7 @@ func (file PIDFile) WriteControl(pid int, overwrite bool) error {
 	return ioutil.WriteFile(file.path, []byte(fmt.Sprintf("%d\n", pid)), 0600)
 }
 
-// Detect whether is process is running.
+// Running returns true if the process is running.
 func (file PIDFile) Running() bool {
 	return processExists(file.pid)
 }
